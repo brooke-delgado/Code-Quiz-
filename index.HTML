@@ -4,7 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="Assests/style.CSS" />
+    <title>Javascript Code Quiz</title>
   </head>
-  <body></body>
+  <body>
+    <center><h1>Javascript Code Quiz</h1></center>
+    <center>
+      <h2>
+        Test your Javascript knowledge and try to answer all 5 questions in 60
+        seconds or less
+      </h2>
+    </center>
+    <button id="submit">Start</button>
+    <p>Click the Start buttone to begin</p>
+    <div id="questions"></div>
+    <div class="choice" id="A" click="checkAnswer ('A')"></div>
+    <div class="choice" id="B" click="checkAnswer ('B')"></div>
+    <div class="choice" id="C" click="checkAnswer ('C')"></div>
+    <div class="choice" id="D" click="checkAnswer ('D')"></div>
+
+    <div id="timer">
+      <h1 class="timer" style="text-align: center"></h1>
+      <div id="main"></div>
+
+      <div id="scoreContainer" style="display: none"></div>
+    </div>
+    <script src="Assests/script.js"></script>
+  </body>
 </html>
