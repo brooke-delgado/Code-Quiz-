@@ -1,99 +1,60 @@
-//buttons
+//Variables- get a handle
+var showCountdown = document.getElementById("timer");
+var questionPrompt = document.getElementById("question.prompt");
+var next = document.getElementById("next");
+var answerA = document.getElementById("answer-A");
+var answerB = document.getElementById("answer-B");
+var answerC = document.getElementById("answer-C");
+var answerD = document.getElementById("answer-D");
+var answerAValue = document.getElementById("pick-A");
+var answerBValue = document.getElementById("pick-B");
+var answerCValue = document.getElementById("pick-C");
+var answerDValue = document.getElementById("pick-D");
 
 //Start Button
-var startBtn = document.querySelector("#start")
-
-//Answer Buttons 
-answerBtn = document.querySelectorAll("button.answBtn")
-Answer0Btn = document.querySelector ("#answer0"); 
-Answer1Btn = document.querySelector ("#answer1"); 
-Answer2Btn = document.querySelector ("#answer2"); 
-Answer3Btn = document.querySelector ("#answer3"); 
-Answer4Btn = document.querySelector ("#answer4"); 
-
-//Score
-submitScoreBtn = document.querySelector ("#score-quiz");
-viewscore= document.querySelector ("#View-Scores");
-
-
-//create questions
-
- var questions = [
-
-    {
-
-    question : "Which of the following is not JavaScript Data Types?",
-    choiceA : "Wrong",
-    choiceB : "Wrong",
-    choiceC : "Wrong",
-    choiceD : "Correct",
-
-    },{
-
-    question : "Which company developed JavaScript?",
-    choiceA : "Correct",
-    choiceB : "Wrong",
-    choiceC : "Wrong",
-    choiceD : "Wrong", 
-
-    },{
-
-    question : "Inside which HTML element do we put the JavaScript?",
-    choiceA : "Correct",
-    choiceB : "Wrong",
-    choiceC : "Wrong",
-    choiceD : "Wrong",
-
-    },{
-
-    question : "Why so JavaScript and Java have similar name?",
-    choiceA : "Wrong",
-    choiceB : "Correct",
-    choiceC : "Wrong",
-    choiceD : "Wrong",
-
-    },{
-
-    question : "What is the original name of JavaScript?",
-    choiceA : "Wrong",
-    choiceB : "Wrong",
-    choiceC : "Correct",
-    choiceD : "Wrong",
-       
-    }
- ];
-
-//quiz begins with timer and question
-function beginQuiz(){
-    IntroEl.style.display = "none";
-    questionsEl.style.display = "block";
-    questionCount = 0;
-}
-
+var startBtn = document.querySelector("#Start");
 
 //Timer
-var timeEL = document.querySelector(".timer");
+var counter = 60;
+var countDown = setInterval(function () {
+  showCountdown.textContent = counter;
+  counter--;
+}, 1000);
 
-var mainEl = document.getElementById("main");
 
-var secondsLeft = 10;
-
-function setTime() {
-   var timerInterval = setInterval(funcation() {
-     secondsLeft--;
-     timeEL.textContent = secondsLeft + "Seconds Left Until Next Question.";
-
-      if(secondsLeft === 0) {
-      clearInterval(timerInterval);
-      sendMessage();
-
-    }
-
-  }, 1000);
+//Populate first question
+if (startBtn) {
+  questionPrompt.textContent = listQuestions[0];
 }
 
-setTime();
+//// QUIZ ARRAY /////
 
-//funciton to move to next page
-
-
+var listQuestions = [
+  "Which of the following is not JavaScript Data Types?",
+  //choices: ["A('Undefined')", "B('Number')", "C('Boolean')", "D('Float')"],
+  //Answer: "D('Float')",
+  "Which company developed JavaScript?",
+  //choices: [
+  //"A('Netscape')",
+  // "B('Bell Labs')",
+  // "C('Sun Microsystems')",
+  // "D('IBM')",
+  //Answer: "A('Netscape'')",
+  "Inside which HTML element do we put the JavaScript?",
+  //choices: ["A('<script>')", "B('<head>')", "C('<meta>')", "D('<style>')"],
+  //Answer: "A('<script>')",
+  "Why do JavaScript and Java have similar name?",
+  //choices: [
+  // "A('JavaScript is a stripped-down version of Java')",
+  // "B('JavaScript's syntax is loosely based on Java's')",
+  // "C('They both originated on the island of Java')",
+  //  "D('None of the above')",
+  //Answer: "B('JavaScript's syntax is loosely based on Java's')",
+  "What is the original name of JavaScript?",
+  //choices: [
+  //  "A('LiveScript')",
+  // "B('EScript')",
+  // "C('Mocha)",
+  // "D('JavaScript')",
+  //Answer: "C('Mocha')",
+];
