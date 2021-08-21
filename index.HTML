@@ -9,22 +9,24 @@
   </head>
   <body style="background-color: pink; text-align: center; color: black">
     <h1>Javascript Code Quiz</h1>
-    <h2>
+    <h3>
       Test your Javascript knowledge and try to answer all 5 questions in 60
       seconds or less
-    </h2>
-    <button id="Start">Start</button>
-    <p>Click the Start button to begin</p>
-    <div id="questions"></div>
-    <div class="choice" id="A" click="checkAnswer ('A')"></div>
-    <div class="choice" id="B" click="checkAnswer ('B')"></div>
-    <div class="choice" id="C" click="checkAnswer ('C')"></div>
-    <div class="choice" id="D" click="checkAnswer ('D')"></div>
-
+    </h3>
+    <div class="container">
+      <h2 id="question-title">Question:<span id="question-prompt"></span></h2>
+      <button id="Next Question">Next Question</button>
+      <p>Click the Start button to begin</p>
+      <div id="listQuestions"></div>
+      <div class="choice" id="choice-A" type="checkbox"></div>
+      <div class="choice" id="choice-B" type="checkbox"></div>
+      <div class="choice" id="choice-C" type="checkbox"></div>
+      <div class="choice" id="choice-D" type="checkbox"></div>
+    </div>
     <div id="timer">
       <h1 class="timer" style="text-align: center"></h1>
       <div id="main"></div>
-      <button id="Next Question">Next Question</button>
+      <button id="Start">Start</button>
       <div id="scoreContainer" style="display: none"></div>
     </div>
     <script src="Assests/script.js"></script>
